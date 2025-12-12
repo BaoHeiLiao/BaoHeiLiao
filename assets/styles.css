@@ -1,0 +1,131 @@
+/* Simple responsive styles for the homepage */
+:root{
+  --bg:#0f1724;
+  --card:#0b1220;
+  --muted:#98a0b3;
+  --accent:#7dd3fc;
+  --text:#e6eef8;
+  --radius:12px;
+  --max-width:980px;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:linear-gradient(180deg,var(--bg) 0%, #071121 100%);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
+}
+
+.container{
+  max-width:var(--max-width);
+  margin:2.5rem auto;
+  padding:0 1rem;
+}
+
+.site-header{
+  padding:1rem;
+  backdrop-filter: blur(6px);
+}
+.nav{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+}
+.logo{
+  font-weight:700;
+  color:var(--text);
+  text-decoration:none;
+  font-size:1.05rem;
+}
+.nav-links{
+  list-style:none;
+  display:flex;
+  gap:1rem;
+  margin:0;
+  padding:0;
+}
+.nav-links a{
+  color:var(--muted);
+  text-decoration:none;
+  font-size:0.95rem;
+}
+.nav-links a:hover{color:var(--accent)}
+
+.hero{
+  text-align:center;
+  padding:2.2rem 1rem;
+  border-radius:var(--radius);
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+  margin-bottom:1.5rem;
+}
+.avatar{
+  width:96px;
+  height:96px;
+  border-radius:999px;
+  object-fit:cover;
+  border:3px solid rgba(125,211,252,0.08);
+  display:block;
+  margin:0 auto 1rem;
+}
+h1{margin:0 0 .35rem;font-size:1.6rem}
+.tagline{color:var(--muted);max-width:70ch;margin:0 auto 1rem}
+
+.btn{
+  display:inline-block;
+  background:linear-gradient(90deg,var(--accent),#60a5fa);
+  color:#04263a;
+  padding:.6rem .9rem;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:600;
+  margin-right:.5rem;
+}
+.btn.ghost{
+  background:transparent;
+  border:1px solid rgba(255,255,255,0.06);
+  color:var(--text);
+}
+
+.section{
+  margin:1.8rem 0;
+}
+.section h2{margin:0 0 .8rem}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:1rem;
+}
+.card{
+  background:var(--card);
+  padding:1rem;
+  border-radius:10px;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.6);
+}
+.card h3{margin:.1rem 0 .5rem;font-size:1.03rem}
+.card p{margin:0;color:var(--muted);font-size:0.95rem}
+
+.contact-list{list-style:none;padding:0;margin:0;color:var(--muted)}
+.contact-list li{margin:.4rem 0}
+
+.site-footer{
+  text-align:center;
+  padding:1.2rem;
+  color:var(--muted);
+  font-size:0.9rem;
+  opacity:0.95;
+  margin-top:2rem;
+}
+
+/* Responsive tweaks */
+@media (max-width:640px){
+  .container{margin:1.2rem auto}
+  .nav-links{display:none}
+  .hero{padding:1.6rem}
+  h1{font-size:1.3rem}
+}
